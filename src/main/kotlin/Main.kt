@@ -1,12 +1,15 @@
 package org.example
 import org.example.dresseur.Entraineur
 import org.example.monstre.EspeceMonstre
+import org.example.monde.Zone
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 //Dresseurs
 var joueur = Entraineur(1, "Sacha", 100)
+
 //Especes
+
 var espece_Springleaf = EspeceMonstre(1, "SpringLeaf", "Graine", 9, 11, 10, 12, 14, 60, 6.5, 9.0, 8.0, 7.0, 10.0, 34.0, "Petit monstre espiègle rond comme une graine, adore le soleil.", "Sa feuille sur la tête indique son humeur.", "Curieux, amical, timide")
 var espece_Flamkip = EspeceMonstre(4, "Flamkip", "Animal", 12, 8, 13, 16,7,50, 10.0, 5.5, 9.5, 9.5, 6.5,22.0, "Petit animal entouré de flammes, déteste le froid.", "Sa flamme change d'intensité selon son énergie.", "Impulsif, joueur, loyal")
 var espece_Aquamy = EspeceMonstre(7, "Aquamy", "Meteo", 10, 11, 9, 14, 14, 55, 9.0, 10.0, 7.5, 12.0, 12.0, 27.0, "Créature meaporeuse semblable à un nuage, produit des gouttes pures.", "Fait baisser la température en s'endormant.", "Calme, rêveur, mystérieux")
@@ -14,10 +17,14 @@ var espece_Laoumi = EspeceMonstre(8, "Laoumi", "Animal", 11, 10, 9, 8, 11, 58, 1
 var espece_Bugsyface = EspeceMonstre(10, "Bugsyface", "Insecte", 10, 13, 8, 7, 13, 45, 7.0, 11.0, 6.5, 8.0, 11.5, 21.0, "Insecte à carapace luisante, se déplace par bonds et vibre des antennes.", "Sa carapace devient plus dure après chaque mue.", "Travailleur, sociable, infatigable")
 var espece_Galum = EspeceMonstre(13, "Galum", "Minéral", 12, 15, 6, 8, 12, 55, 9.0, 13.0, 4.0, 6.5, 10.5, 13.0, "Golem ancien de pierre, yeux lumineux en garde.", "Peut rester immobile des heures comme une statue.", "Sérieux, stoïque, fiable")
 
+//ROUTES
+var route1 = Zone(1,"Route 1", 100, mutableListOf(espece_Aquamy,espece_Flamkip,espece_Springleaf), null,null)
+var route2 = Zone(2,"Route 2", 125, mutableListOf(espece_Bugsyface,espece_Galum,espece_Laoumi),null, null)
+var route3 = Zone(3,"route3",150, mutableListOf(espece_Laoumi,espece_Galum,espece_Bugsyface,espece_Springleaf,espece_Flamkip,espece_Aquamy),null,null)
 fun main() {
-    println(espece_Springleaf.afficheArt(true))
-    println(espece_Flamkip.afficheArt(true))
-    println(espece_Aquamy.afficheArt(true))
+    route1.zoneSuivante = route2
+    println(espece_Springleaf.afficheArt())
+    route2.zonePrecedante = route1
 }
 /**
  * Change la couleur du message donné selon le nom de la couleur spécifié.

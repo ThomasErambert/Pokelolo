@@ -25,7 +25,7 @@ import java.io.File
  * @property modPv Le modificateur appliqué aux points de vie[cite: 1].
  * @property description La description générale de l'espèce[cite: 1].
  * @property particularites Les particularités ou spécificités de l'espèce[cite: 1].
- * @property caractères Les traits de caractère propres à l'espèce[cite: 1].
+ * @property caracteres Les traits de caractère propres à l'espèce[cite: 1].
  */
 class EspeceMonstre(
     var id : Int,
@@ -45,7 +45,7 @@ class EspeceMonstre(
     val modPv: Double,
     val description: String = "",
     val particularites: String = "",
-    val caractères: String = "",
+    val caracteres: String = "",
 ) {
     fun afficheArt(value: Any) {}
 
