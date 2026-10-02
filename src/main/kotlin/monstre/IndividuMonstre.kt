@@ -83,19 +83,9 @@ class IndividuMonstre(
     var niveau: Int = 1
     var attaque: Int = espece.baseAttaque + (-2..2).random()
     var defense: Int = espece.baseDefense + (-2..2).random()
-    var défense: Int
-    get() = defense
-    set(value) {
-        defense = value
-    }
     var vitesse: Int = espece.baseVitesse + (-2..2).random()
     var attaqueSpe: Int = espece.baseAttaqueSpe + (-2..2).random()
     var defenseSpe: Int = espece.baseDefenseSpe + (-2..2).random()
-    var défenseSpe: Int
-    get() = defenseSpe
-    set(value) {
-        defenseSpe = value
-    }
     var pvMax: Int = espece.basePv + (-5..5).random()
     val potentiel: Double = Random.nextDouble(0.5, 2.0)
     var exp: Double = 0.0
@@ -136,7 +126,7 @@ class IndividuMonstre(
 
 
     /**
-     * Initialise l'expérience du monstre avec la valeur fournie dans le constructeur[cite: 4].
+     * Initialise l'expérience du monstre plicateur modifie davec la valeur fournie dans le constructeur[cite: 4].
      */
 
     /**
