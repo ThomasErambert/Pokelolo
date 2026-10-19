@@ -1,33 +1,21 @@
 package org.example.dresseur
 
-/**
- * Représente un entraîneur dans le contexte du jeu.
- *
- * Un entraîneur est responsable de gérer une équipe de monstres, une boîte pour stocker des monstres supplémentaires
- * et un sac contenant des objets appelés MonsterKubes. L'entraîneur a également une somme d'argent associée.
- *
- * @property id L'identifiant unique de l'entraîneur.
- * @property nom Le nom de l'entraîneur.
- * @property argents La quantité d'argent en possession de l'entraîneur.
+import org.example.item.Item
+import org.example.monstre.IndividuMonstre
+import java.time.LocalDate
 
- */
+/** Représente un dresseur (par exemple Ondine) et ses monstres. */
 class Entraineur(
     var id: Int,
     var nom: String,
-    var argents:Int,
-    //TODO equipeMonstre
-    //TODO boiteMonstre
-    //TODO sacAKube
+    var argents: Int,
+    var equipeMonstre: MutableList<IndividuMonstre> = mutableListOf(),
+    var boiteMonstre: MutableList<IndividuMonstre> = mutableListOf(),
+    var sacAItems: MutableList<Item> = mutableListOf()
 ) {
-    /**
-     * Affiche les détails de l'entraîneur, y compris son nom et la quantité d'argent en sa possession.
-     *
-     * Cette méthode affiche les informations de l'entraîneur sous la forme de deux lignes :
-     * 1. Le nom de l'entraîneur.
-     * 2. La somme d'argent qu'il possède.
-     */
-    fun afficheDetail(){
-        println("Dresseur : ${this.nom}")
-        println("Argents: ${this.argents} ")
+    /** Affiche le nom du dresseur et son argent. */
+    fun afficheDetail() {
+        println("Dresseur : $nom")
+        println("Argents : $argents")
     }
 }
